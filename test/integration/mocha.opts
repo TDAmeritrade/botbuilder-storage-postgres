@@ -1,0 +1,5 @@
+--bail
+--require source-map-support/register
+--require ./test/integration/async-dump
+--recursive
+**/*.integration.test.js

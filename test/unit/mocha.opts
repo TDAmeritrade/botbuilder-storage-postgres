@@ -1,0 +1,4 @@
+--bail
+--require source-map-support/register
+--recursive
+**/*.test.js

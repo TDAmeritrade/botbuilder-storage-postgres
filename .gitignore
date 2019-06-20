@@ -1,0 +1,12 @@
+node_modules
+.env
+.nyc_output
+lib
+coverage
+*.tgz
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
