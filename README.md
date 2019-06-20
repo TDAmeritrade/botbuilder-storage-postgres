@@ -1,6 +1,6 @@
 # State Storage for Bot Framework using Postgres
 
-This project provides a Postgres storage mechanism for [Bot Framework-JS SDK V4.](https://github.com/Microsoft/botbuilder-js).
+This project provides a Postgres storage mechanism for [Bot Framework-JS SDK V4](https://github.com/Microsoft/botbuilder-js).
 
 It allows you to store bot state in Postgres, so that you can scale out your bot, and be more resilient to bot server failures.
 
