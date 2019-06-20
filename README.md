@@ -4,6 +4,8 @@ This project provides a Postgres storage mechanism for [Bot Framework-JS SDK V4]
 
 It allows you to store bot state in Postgres, so that you can scale out your bot, and be more resilient to bot server failures.
 
+For more information about the botbuilder community, please visit [the botbuilder community project](https://github.com/BotBuilderCommunity/botbuilder-community-js).
+
 ## Requirements
 
 -   [NodeJS](https://nodejs.org/en/) 10.x is a requirement to install dependencies, build and run tests.
