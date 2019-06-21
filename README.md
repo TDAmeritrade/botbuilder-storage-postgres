@@ -1,4 +1,4 @@
-[![Github All Releases](https://img.shields.io/github/downloads/TDAmeritrade/botbuilder-storage-postgres/total.svg)]() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Github All Releases](https://img.shields.io/github/downloads/TDAmeritrade/botbuilder-storage-postgres/total.svg)]() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter](https://img.shields.io/twitter/url/https/github.com/TDAmeritrade/botbuilder-storage-postgres.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres)
 
 # State Storage for Bot Framework using Postgres
 
