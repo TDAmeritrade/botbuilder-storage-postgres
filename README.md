@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/TDAmeritrade/botbuilder-storage-postgres/total.svg)]()
+
 # State Storage for Bot Framework using Postgres
 
 This project provides a Postgres storage mechanism for [Bot Framework-JS SDK V4](https://github.com/Microsoft/botbuilder-js).
