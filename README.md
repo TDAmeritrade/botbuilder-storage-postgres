@@ -1,4 +1,5 @@
-[![Github All Releases](https://img.shields.io/github/downloads/TDAmeritrade/botbuilder-storage-postgres/total.svg)]() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter](https://img.shields.io/twitter/url/https/github.com/TDAmeritrade/botbuilder-storage-postgres.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres)
+[![Github All Releases](https://img.shields.io/github/downloads/TDAmeritrade/botbuilder-storage-postgres/total.svg)][![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres?ref=badge_shield)
+() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter](https://img.shields.io/twitter/url/https/github.com/TDAmeritrade/botbuilder-storage-postgres.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres)
 
 # State Storage for Bot Framework using Postgres
 
@@ -52,3 +53,6 @@ See [Postgres Connection URI format](https://www.postgresql.org/docs/current/lib
  * Copyright 2019 TD Ameritrade. Released under the terms of the MIT license.
  *
  ***********************************************************************************
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FTDAmeritrade%2Fbotbuilder-storage-postgres?ref=badge_large)
