@@ -1,4 +1,3 @@
-
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
 
 /***********************************************************************************
@@ -124,7 +123,9 @@ export class PostgresStorage implements Storage {
       async (key): Promise<void> => {
         const query = `INSERT INTO ${PostgresStoreItem.tableName} (id, data) 
         VALUES (:id, :data) 
-        ON CONFLICT (id) DO UPDATE SET data = test.data || :data`;
+        ON CONFLICT (id) DO UPDATE SET data = ${
+          PostgresStoreItem.tableName
+        }.data || :data`;
         await this.connection.query(query, {
           replacements: {
             id: key,
