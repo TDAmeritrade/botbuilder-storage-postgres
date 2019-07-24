@@ -1,0 +1,85 @@
+pr:
+    - master
+
+queue:
+    name: Hosted Ubuntu 1604
+    demands: npm
+
+steps:
+    # Add npm
+    - task: Npm@1
+      displayName: 'npm install'
+      inputs:
+          verbose: false
+
+    # Ensure version was bumped
+    - task: PowerShell@2
+      displayName: 'Package Version Bump Check'
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      inputs:
+          failOnStderr: true
+          targetType: inline
+          script: |
+              Write-Host "Checking published NPM version vs. the code package.json::version"
+              $publishedVersion = npm show botbuilder-storage-mongodb version
+              $thisVersion = node -e "console.log(require('./package.json').version)"
+              Write-Host $publishedVersion '  vs. '  $thisVersion
+              if ($publishedVersion -eq $thisVersion) { 
+                 $message =  "Version $thisVersion is the same as published version $publishedVersion on NPM. Please bump source version in package.json."   
+                 write-error $message
+              }
+
+    # Unit tests only
+    - task: Npm@1
+      displayName: 'unit tests'
+      inputs:
+          command: custom
+          verbose: false
+          customCommand: 'run test:unit'
+
+    # Stand a dockerized MongoDB instance
+    - task: Docker@1
+      displayName: 'Run MongoDB on Docker'
+      inputs:
+          containerregistrytype: 'Container Registry'
+          command: 'Run an image'
+          imageName: 'mongo:4.0'
+          qualifyImageName: false
+          containerName: 'mongo_4_0'
+          ports: '27017:27017'
+          memoryLimit: 1GB
+
+    # Integration tests only
+    - task: Npm@1
+      displayName: 'integration tests'
+      inputs:
+          command: custom
+          verbose: false
+          customCommand: 'run test:integration'
+
+      # Copy package.json into lib
+    - task: CopyFiles@1
+      displayName: 'Copy package.json to lib'
+      inputs:
+          contents: 'lib/**'
+          targetFolder: 'package'
+
+    # Copy documents, index.js and package.json into lib
+    - task: CopyFiles@2
+      displayName: 'Copy documents into lib'
+      inputs:
+          Contents: |
+              CODE_OF_COUNDUCT.md
+              Contributing.md
+              LICENSE
+              README.md
+              index.js
+              package.json
+          TargetFolder: 'package'
+
+    # Publish
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: MongoDbStorage'
+      inputs:
+          PathtoPublish: package
+          ArtifactName: MongoDbStoragePackage

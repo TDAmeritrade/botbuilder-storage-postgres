@@ -1,0 +1,50 @@
+{
+    "name": "botbuilder-storage-postgres",
+    "version": "1.0.3",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Anthony Gardner",
+            "url": "https://github.com/roeintense"
+        }
+    ],
+    "homepage": "https://github.com/TDAmeritrade/botbuilder-storage-postgres#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TDAmeritrade/botbuilder-storage-postgres.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@types/pg": "^7.4.14",
+        "botbuilder": "^4.4.0",
+        "pg": "^7.11.0",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^5.8.12"
+    },
+    "scripts": {
+        "test:unit": "npm run build && nyc mocha test/unit",
+        "test:integration": "npm run build && nyc mocha test/integration",
+        "cover": "npm run build && nyc mocha test && nyc report --reporter html && start /max coverage/index.html",
+        "build": "node node_modules/typescript/bin/tsc"
+    },
+    "devDependencies": {
+        "@types/bluebird": "^3.5.27",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^10.14.10",
+        "@types/validator": "^10.11.1",
+        "@typescript-eslint/eslint-plugin": "^1.11.0",
+        "@typescript-eslint/parser": "^1.11.0",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.3.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "mocha": "^5.2.0",
+        "nyc": "^14.1.1",
+        "prettier": "^1.18.2",
+        "prettier-eslint": "^8.8.2",
+        "sinon": "^7.3.2",
+        "source-map-support": "^0.5.12",
+        "typescript": "^3.5.2"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "botbuilder-mongo-storage-sample",
+    "dependencies": {
+        "botbuilder": "^4.2.0",
+        "botbuilder-greeting": "^1.0.1",
+        "mongodb": "^3.1.10",
+        "restify": "^7.3.0",
+        "axios": ">=0.18.1"
+    },
+    "scripts": {
+        "start": " node app.js"
+    },
+    "devDependencies": {
+        "@types/mongodb": "^3.1.17",
+        "@types/node": "^6.0.52",
+        "@types/restify": "^2.0.35"
+    }
+}
