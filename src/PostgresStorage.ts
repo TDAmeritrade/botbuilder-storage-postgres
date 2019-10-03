@@ -119,21 +119,36 @@ export class PostgresStorage implements Storage {
 
     await this.ensureConnected();
 
-    Object.keys(changes).forEach(
-      async (key): Promise<void> => {
-        const query = `INSERT INTO ${PostgresStoreItem.tableName} (id, data) 
-        VALUES (:id, :data) 
-        ON CONFLICT (id) DO UPDATE SET data = ${
-          PostgresStoreItem.tableName
-        }.data || :data`;
-        await this.connection.query(query, {
-          replacements: {
-            id: key,
-            data: JSON.stringify(changes[key])
-          }
-        });
+    async function asyncForEach(
+      array: any[],
+      callback: {
+        (key: string): Promise<void>;
+        (arg0: any, arg1: number, arg2: any[]): void;
       }
-    );
+    ) {
+      for (let index: number = 0; index < array.length; index++) {
+        await callback(array[index], index, array);
+      }
+    }
+
+    const writeAsync = async () => {
+      await asyncForEach(
+        Object.keys(changes),
+        async (key: string): Promise<void> => {
+          const query = `INSERT INTO ${PostgresStoreItem.tableName} (id, data) 
+        VALUES (:id, :data) 
+        ON CONFLICT (id) DO UPDATE SET data = ${PostgresStoreItem.tableName}.data || :data`;
+          await this.connection.query(query, {
+            replacements: {
+              id: key,
+              data: JSON.stringify(changes[key])
+            }
+          });
+        }
+      );
+    };
+
+    writeAsync();
   }
 
   public async delete(keys: string[]): Promise<void> {
