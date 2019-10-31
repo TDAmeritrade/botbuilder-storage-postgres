@@ -21,7 +21,7 @@
     "botbuilder": "^4.4.0",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.8.12"
+    "sequelize": "^5.21.2"
   },
   "scripts": {
     "test:unit": "npm run build && nyc mocha test/unit",
