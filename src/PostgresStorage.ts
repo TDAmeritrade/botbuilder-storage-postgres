@@ -13,6 +13,7 @@ import { Sequelize, Model, DataTypes, Op } from "sequelize";
 export interface PostgresStorageConfig {
   uri: string;
   collection?: string;
+  logging?: boolean | ((sql: string, timing?: number) => void);
 }
 
 class PostgresStoreItem extends Model {
@@ -70,7 +71,8 @@ export class PostgresStorage implements Storage {
         min: 0,
         acquire: 30000,
         idle: 10000
-      }
+      },
+      logging: this.config.logging
     });
     await PostgresStoreItem.init(
       {
