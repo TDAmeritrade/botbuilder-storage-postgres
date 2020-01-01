@@ -1,0 +1,16 @@
+{
+    "name": "botbuilder-postgres-storage-sample",
+    "dependencies": {
+        "botbuilder": "^4.2.0",
+        "botbuilder-greeting": "^1.0.1",
+        "pg": "^7.12.1",
+        "restify": "^7.3.0"
+    },
+    "scripts": {
+        "start": " node app.js"
+    },
+    "devDependencies": {
+        "@types/node": "^6.0.52",
+        "@types/restify": "^2.0.35"
+    }
+}

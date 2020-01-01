@@ -1,0 +1,17 @@
+{
+    "name": "postgres_sample_bot",
+    "description": "A sample bot using postgres as state storage.",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:5000/api/messages",
+            "id": "625036ba-02c4-4479-ad5c-7eddc07203d0",
+            "name": "http://localhost:5000/api/messages"
+        }
+    ],
+    "secretKey": "",
+    "version": "1.0",
+    "overrides": null
+}
