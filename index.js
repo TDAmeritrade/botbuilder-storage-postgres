@@ -1,3 +1,3 @@
-var PostgresStorage = require("./lib/PostgresStorage");
+import { PostgresStorage } from "./lib/PostgresStorage";
 
 module.exports = PostgresStorage;
