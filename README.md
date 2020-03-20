@@ -41,7 +41,7 @@ The `conversationState` declared above would have three methods attached:
 * [write](https://github.com/TDAmeritrade/botbuilder-storage-postgres/blob/99e3cb39e27abf18c2e187ee572652a80e99862d/src/PostgresStorage.ts#L117). Signature: `async write(changes: StoreItems): Promise<void>`
 * [delete](https://github.com/TDAmeritrade/botbuilder-storage-postgres/blob/99e3cb39e27abf18c2e187ee572652a80e99862d/src/PostgresStorage.ts#L156). Signature: `async delete(keys: string[]): Promise<void>`
 
-For information about the types expected and returned with each method, please check out the source. 
+For information about the types expected and returned with each method, please check out the source and read the [Microsoft Storage Interface](https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/storage?view=botbuilder-ts-latest) documentation. 
 
 ## Configuration Options
 
