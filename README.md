@@ -34,6 +34,15 @@ Where `POSTGRES_URI` is set in `.env` or your secrets store of choice according 
 
 `postgresql://[user[:password]@][netloc][:port][,...][/dbname][?param1=value1&...]`
 
+### Methods
+
+The `conversationState` declared above would have three methods attached: 
+* [read](https://github.com/TDAmeritrade/botbuilder-storage-postgres/blob/99e3cb39e27abf18c2e187ee572652a80e99862d/src/PostgresStorage.ts#L102). Signature: `async read(stateKeys: string[]): Promise<StoreItems>`
+* [write](https://github.com/TDAmeritrade/botbuilder-storage-postgres/blob/99e3cb39e27abf18c2e187ee572652a80e99862d/src/PostgresStorage.ts#L117). Signature: `async write(changes: StoreItems): Promise<void>`
+* [delete](https://github.com/TDAmeritrade/botbuilder-storage-postgres/blob/99e3cb39e27abf18c2e187ee572652a80e99862d/src/PostgresStorage.ts#L156). Signature: `async delete(keys: string[]): Promise<void>`
+
+For information about the types expected and returned with each method, please check out the source. 
+
 ## Configuration Options
 
 | Field        | Description                                                    | Value      |
