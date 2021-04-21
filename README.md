@@ -34,6 +34,8 @@ Where `POSTGRES_URI` is set in `.env` or your secrets store of choice according 
 
 `postgresql://[user[:password]@][netloc][:port][,...][/dbname][?param1=value1&...]`
 
+**NOTE** Make sure to encode special characters in the password. More details on [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding#Reserved_characters)
+
 ### Methods
 
 The `conversationState` declared above would have three methods attached: 
