@@ -4,7 +4,7 @@
         "botbuilder": "^4.2.0",
         "botbuilder-greeting": "^1.0.1",
         "pg": "^7.12.1",
-        "restify": "^7.3.0"
+        "restify": "^11.0.0"
     },
     "scripts": {
         "start": " node app.js"
