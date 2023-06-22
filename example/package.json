@@ -3,7 +3,7 @@
     "dependencies": {
         "botbuilder": "^4.2.0",
         "botbuilder-greeting": "^1.0.1",
-        "pg": "^7.12.1",
+        "pg": "^8.11.0",
         "restify": "^11.0.0"
     },
     "scripts": {
